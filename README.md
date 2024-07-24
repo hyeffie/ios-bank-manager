@@ -5,28 +5,30 @@
 - SeSAC x 맛있는코드 부트캠프 토이 프로젝트 (2인 1조)
 - 원본 프로젝트 저장소: https://github.com/Changhyun-Kyle/ios-bank-manager/tree/develop
 
-## 스크린샷
+## 🍄‍🟫 스크린샷
 
-![Simulator Screen Recording - iPhone 15 Pro - 2024-05-18 at 12.54.27.gif]()
+![bankmanager-screenshot](https://github.com/user-attachments/assets/d1c4d981-e8df-4e23-a101-b778e073df77)
 
-## 개요
+
+## 🍄‍🟫 개요
 
 - 일정 업무 처리 시간 이후에 업무 종료를 처리하고 새로운 업무 추가에 대응하는 등 비동기 프로그래밍 경험을 핵심으로 하는 토이 프로젝트
 - Dispatch 기술을 사용하여 비동기 프로그래밍하면서 여러 가지 멀티 스레딩 상황을 경험
 - 객체가 적은 역할을 부여받도록 설계하고, 각 객체 사이에서 느슨하게 통신하도록 인터페이스 설계
 
-## 사용 기술
+## 🍄‍🟫 사용 기술
 
 - UIKit
 - UITableViewDiffableDataSource
 - GCD
 - SwiftLint
 
-## 프로젝트 구조
+## 🍄‍🟫 프로젝트 구조
 
 ### 도메인 설계
 
-![step4-설계.jpg]()
+![bank-refactor](https://github.com/user-attachments/assets/ce3a16fe-a581-4f72-a550-3a2703b68c69)
+
 
 - 특정 업무를 맡은 은행원이 각 업무 대기열의 고객을 한 명씩 처리하는 상황으로, 각 업무 처리마다 하나의 스레드를 생성하도록 구현
 - 메서드 호출 주체에 따라 다르게 설계할 수 있었음.
@@ -41,11 +43,15 @@
 
 ### 이벤트 흐름
 
-![step4-설계 (1).jpg]()
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8b4de050-1fd3-46d3-aa18-951cb6a25d52" width=800>
+</p>
+
 
 - 두 설계 모두 UI에서 발생한 이벤트가 사슬의 다음 객체의 동작을 트리거하고, 동작이 완료되면 처리할 대리 객체를 호출하는 방식으로 회귀하게 됨.
 
-## 주요 문제 해결 경험
+## 🍄‍🟫 주요 문제 해결 경험
 
 ### 비동기 프로그램 설계와 설계 변경
 
@@ -67,7 +73,7 @@
     - 회귀형 구조에서 모든 계층을 Delegate 패턴, 즉 인터페이스로 구성할 때 생성자 주입이 아닌, 초기화 이후 속성에 참조를 할당하는 방식으로만 delegate 설정이 가능하며 delegate 속성을 외부로 노출시켜야만 한다는 사실을 알게 됨.
     - 전체 계층을 추상화면서 추상화에 큰 비용이 발생하는 것을 경험함.
 
-## 구현 단계별 기록
+## 🍄‍🟫 구현 단계별 기록
 
 ### 스텝별 현업자 코드 리뷰
 
